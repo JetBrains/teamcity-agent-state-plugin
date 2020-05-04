@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teamcity-plugin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:schemas-jetbrains-com:teamcity-plugin-v1-xml">
+  <info>
+    <name>agentState</name>
+    <display-name>Agent state indicator</display-name>
+    <version>@Version@</version>
+    <description>Replicates the current state of the agent to the file</description>
+    <download-url>https://github.com/JetBrains/teamcity-agent-state-plugin</download-url>
+    <email>mikhail@pilin.name</email>
+    <vendor>
+      <name>JetBrains</name>
+      <url>https://www.jetbrains.com/</url>
+      <logo>https://www.jetbrains.com/company/docs/logo_jetbrains.png</logo>
+    </vendor>
+  </info>
+  <deployment use-separate-classloader="true" allow-runtime-reload="true" />
+</teamcity-plugin>
