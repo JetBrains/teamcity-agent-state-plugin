@@ -71,7 +71,7 @@ public class AgentStateListener extends AgentLifeCycleAdapter {
         public StateUpdater(@NotNull final BuildAgentConfiguration config, @NotNull final State state) {
             myState = state;
             final File file = new File(config.getCacheDirectory("agent-state"), "current-state");
-            final Thread thread = new Thread(new Runnable() {
+            myThread = new Thread(new Runnable() {
                 @Override
                 public void run() {
                     for (State prevState = null; ; ) {
@@ -106,10 +106,9 @@ public class AgentStateListener extends AgentLifeCycleAdapter {
                     LOG.info("The update thread was exited");
                 }
             });
-            thread.setName("AgentStateUpdater");
-            thread.setDaemon(true);
-            thread.start();
-            myThread = thread;
+            myThread.setName("AgentStateUpdater");
+            myThread.setDaemon(true);
+            myThread.start();
         }
 
         public void set(@NotNull final State state) {
