@@ -92,7 +92,7 @@ public class AgentStateListener extends AgentLifeCycleAdapter {
                         try {
                             FileUtil.writeFileAndReportErrors(file, currState.getValue());
                         } catch (IOException e) {
-                            LOG.warn(String.format("Failed to update currState to %s, try again", currState.name()));
+                            LOG.warn(String.format("Failed to update state to %s, try again", currState.name()));
                             try {
                                 Thread.sleep(50);
                             } catch (InterruptedException ie) {
